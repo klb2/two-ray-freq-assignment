@@ -1,117 +1,90 @@
-# Template for Reproducible Research Papers
+# Frequency Assignment for Guaranteed QoS in Two-Ray Models with Limited Location Information
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/klb2/reproducible-paper-python-template/HEAD)
-![GitHub](https://img.shields.io/github/license/klb2/reproducible-paper-python-template)
-[![DOI](https://img.shields.io/badge/doi-10.1109/TWC.2022.3172760-informational)](https://doi.org/10.1109/TWC.2022.3172760)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/klb2/two-ray-freq-assignment/HEAD)
+![GitHub](https://img.shields.io/github/license/klb2/two-ray-freq-assignment)
 
 
-```diff
-! Update badge information/links
-```
+This repository is accompanying the paper "Frequency Assignment for Guaranteed
+QoS in Two-Ray Models with Limited Location Information" (K.-L. Besser, E.
+Jorswieck, J. Coon, H. V. Poor. May 2025, WiOpt 2025).
 
-This repository provides a template for Python code that is accompanying a
-research paper.
-Most likely, this will be an implementation of an algorithm and/or simulation
-results.
-
-The code should be made publicly accessible in order to allow everybody to
-reproduce the results presented in the paper.
-
-You can use this template/fork it and use it as a starting point. You find a
-basic structure in `main.py`, where only need to add your custom code.
-This README also already contains all important information and you only need
-to adjust the parts specific to your project.
-The `run.sh` script should contain the exact commands that you used to generate
-the results/plots in your paper. In particular, you should make sure to specify
-all of the parameters.
-
-The proposed structure of the README is
-1. Information about the paper (title, authors, journal/conference, DOI, arXiv)
-2. File list of all files that are provided in the repository (with short
-   description)
-3. Usage description. If you provide Jupyter notebooks this can also include a
-   link to Binder.
-4. Acknowledgements (funding information, ...)
-5. License and Referencing (description of license and how to cite your work,
-   e.g., the bibtex entry of your paper)
-
-You can find some general ideas on the structure and required aspects of the
-repository in [this blog
-post](https://klb2.gitlab.io/writing/python/2021/12/20/reproducible-papers.html)
-(independent of the used programming language).
+The idea is to give an interactive version of the calculations and presented
+concepts to the reader. One can also change different parameters and explore
+different behaviors on their own.
 
 
 ## File List
 The following files are provided in this repository:
 
 - `run.sh`: Bash script that reproduces the figures presented in the paper.
+- `assign_frequencies.py`: Python module that contains the implementations of
+  the frequency assignment algorithms.
+- `example_local_minima.py`: Python script that shows the numerical example of
+  calculating the distances where destructive interference occurs.
+- `model.py`: Python module that contains functions about the system model,
+  e.g., to calculate the lengths of the paths.
+- `multiple_frequencies.py`: Python module that contains the functions to
+  calculate the receive power when multiple frequencies are used in parallel.
+- `roots_fourier_series.py`: Python module that contains functions to calculate
+  the zeros of a Fourier series.
+- `single_frequency.py`: Python module that contains the functions to calculate
+  the receive power when a single frequency is used.
 - `util.py`: Python module that contains utility functions, e.g., for saving results.
-```diff
-- `main.py`: Python script that...
-- ...
-```
+
 
 ## Usage
 ### Running it online
-The easiest way is to use services like [Binder](https://mybinder.org/) to run
-the notebook online. Simply navigate to
-```diff
-! Add binder link.
-```
-to run the notebooks in your browser without setting everything up locally.
+The easiest way is to use services like [Binder](https://mybinder.org/) or
+[CodeOcean](https://codeocean.com/) to run the scripts online without having to
+install anything locally.
 
 ### Local Installation
-If you want to run it locally on your machine, Python3 and Jupyter are needed.
+If you want to run it locally on your machine, Python3 and some libraries are
+needed.
 The present code was developed and tested with the following versions:
-```diff
-- Python 3.8
-- Jupyter 1.0
-- numpy 1.18
-- scipy 1.4
-```
+
+- Python 3.13
+- numpy 2.2
+- scipy 1.15
+- pandas 2.2
 
 Make sure you have [Python3](https://www.python.org/downloads/) installed on
 your computer.
-You can then install the required packages (including Jupyter) by running
+You can then install the required packages by running
 ```bash
 pip3 install -r requirements.txt
-jupyter nbextension enable --py widgetsnbextension
 ```
 This will install all the needed packages which are listed in the requirements 
-file. The second line enables the interactive controls in the Jupyter
-notebooks.
+file.
 
-Finally, you can run the Jupyter notebooks with
-```bash
-jupyter notebook
-```
-
-You can also recreate the figures from the paper by running
+You can then recreate the figures and simulation results from the paper by
+running
 ```bash
 bash run.sh
 ```
 
 
 ## Acknowledgements
-This research was supported by
-```diff
-! Add funding information
-```
+This research was supported by the German Research Foundation (DFG) under grant
+BE 8098/1-1, by the Federal Ministry of Education and Research Germany (BMBF)
+as part of the 6G Research and Innovation Cluster 6G-RIC under Grant 16KISK031,
+by the EPSRC under grant number EP/T02612X/1, and by the U.S National Science
+Foundation under Grants CNS-2128448 and ECCS-2335876.
 
 
 ## License and Referencing
-This program is licensed under the GPLv3 license. If you in any way use this
+This program is licensed under the MIT license. If you in any way use this
 code for research that results in publications, please cite our original
 article listed above.
 
 You can use the following BibTeX entry
 ```bibtex
-@article{...,
-  author = {...},
-  title = {...},
-  ...
+@misc{Besser2025frequency,
+  author = {Besser, Karl-Ludwig and Jorswieck, Eduard A. and Coon, Justin P. and Poor, H. Vincent},
+  title = {Frequency Assignment for Guaranteed {QoS} in Two-Ray Models with Limited Location Information},
+	booktitle = {23rd International Symposium on Modeling and Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt)},
+	year = {2025},
+	month = {5},
+	publisher = {IEEE},
 }
-```
-```diff
-! Add bibtex entry of the published paper
 ```
