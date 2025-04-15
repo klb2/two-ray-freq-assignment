@@ -65,11 +65,12 @@ bash run.sh
 
 
 ## Acknowledgements
-This research was supported by the German Research Foundation (DFG) under grant
-BE 8098/1-1, by the Federal Ministry of Education and Research Germany (BMBF)
-as part of the 6G Research and Innovation Cluster 6G-RIC under Grant 16KISK031,
-by the EPSRC under grant number EP/T02612X/1, and by the U.S National Science
-Foundation under Grants CNS-2128448 and ECCS-2335876.
+This research was supported by the [Security Link
+project](https://security-link.se/), by the Federal Ministry of Education and
+Research Germany (BMBF) as part of the 6G Research and Innovation Cluster
+6G-RIC under Grant 16KISK031, by the EPSRC under grant number EP/T02612X/1, and
+by the U.S National Science Foundation under Grants CNS-2128448 and
+ECCS-2335876.
 
 
 ## License and Referencing
@@ -79,12 +80,12 @@ article listed above.
 
 You can use the following BibTeX entry
 ```bibtex
-@misc{Besser2025frequency,
+@inproceedings{Besser2025frequency,
   author = {Besser, Karl-Ludwig and Jorswieck, Eduard A. and Coon, Justin P. and Poor, H. Vincent},
   title = {Frequency Assignment for Guaranteed {QoS} in Two-Ray Models with Limited Location Information},
-	booktitle = {23rd International Symposium on Modeling and Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt)},
-	year = {2025},
-	month = {5},
-	publisher = {IEEE},
+  booktitle = {23rd International Symposium on Modeling and Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt)},
+  year = {2025},
+  month = {5},
+  publisher = {IEEE},
 }
 ```
