@@ -2,11 +2,12 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/klb2/two-ray-freq-assignment/HEAD)
 ![GitHub](https://img.shields.io/github/license/klb2/two-ray-freq-assignment)
+[![DOI:10.23919/WiOpt66569.2025.11123355](https://img.shields.io/badge/doi-10.23919/WiOpt66569.2025.11123355-informational)](https://doi.org/10.23919/WiOpt66569.2025.11123355)
 
 
 This repository is accompanying the paper "Frequency Assignment for Guaranteed
 QoS in Two-Ray Models with Limited Location Information" (K.-L. Besser, E.
-Jorswieck, J. Coon, H. V. Poor. May 2025, WiOpt 2025).
+Jorswieck, J. Coon, H. V. Poor. May 2025, WiOpt 2025. [DOI:10.23919/WiOpt66569.2025.11123355](https://doi.org/10.23919/WiOpt66569.2025.11123355)).
 
 The idea is to give an interactive version of the calculations and presented
 concepts to the reader. One can also change different parameters and explore
@@ -87,5 +88,6 @@ You can use the following BibTeX entry
   year = {2025},
   month = {5},
   publisher = {IEEE},
+  doi = {10.23919/WiOpt66569.2025.11123355},
 }
 ```

@@ -1,6 +1,13 @@
 #!/bin/sh
 #
+# The code in this repository is accompanying the publication "Frequency
+# Assignment for Guaranteed QoS in Two-Ray Models with Limited Location
+# Information" (K.-L. Besser, E. Jorswieck, J. Coon, H. V. Poor. May 2025,
+# WiOpt 2025. DOI:10.23919/WiOpt66569.2025.11123355)
 #
+# License of the code: MIT
+
+
 FREQ0="26.5e9"
 HTX=10
 HRX="1.5"
