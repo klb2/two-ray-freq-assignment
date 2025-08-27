@@ -23,7 +23,9 @@ def delta_phi(distance, freq, h_tx, h_rx, c=constants.speed_of_light):
     return _d_phi
 
 
-def rec_power(distance, freq, h_tx, h_rx, G_los=1, G_ref=1, c=constants.c, power_tx=1):
+def rec_power(
+    distance, freq, h_tx, h_rx, G_los=1.0, G_ref=1.0, c=constants.c, power_tx=1.0
+):
     d_los = length_los(distance, h_tx, h_rx)
     d_ref = length_ref(distance, h_tx, h_rx)
     omega = 2 * np.pi * freq

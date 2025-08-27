@@ -5,7 +5,7 @@ from scipy import constants
 import matplotlib.pyplot as plt
 
 from model import length_los, length_ref, get_distance_from_delta_len
-from multiple_frequencies import sum_power_lower_envelope, sum_power
+from multiple_frequencies import sum_power_lower_envelope, sum_power, sc_power
 from roots_fourier_series import (
     calc_fourier_coefficients,
     construct_frobenius_matrix_fourier_series,
@@ -79,16 +79,20 @@ def main_crit_distances(
     power_rx_db = to_decibel(power_rx)
     power_sum_lower = sum_power_lower_envelope(distance, freq, h_tx, h_rx)
     power_sum_lower_db = to_decibel(power_sum_lower)
+    power_sc = len(freq)*sc_power(distance, freq, h_tx, h_rx)
+    power_sc_db = to_decibel(power_sc)
     results = {
         "distance": distance,
         "powerSum": power_rx_db,
         "envelope": power_sum_lower_db,
+        "sc": power_sc_db,
     }
 
     if plot:
         fig, axs = plt.subplots()
         axs.semilogx(distance, power_rx_db, label="Receive Power")
         axs.semilogx(distance, power_sum_lower_db, label="Lower Bound")
+        axs.semilogx(distance, power_sc_db, label="Selection Combining")
         axs.vlines(distance_roots, -140, -60, ls="--", color="r")
         axs.vlines([d_min, d_max], -140, -60, ls="-", color="k", lw=2)
         axs.legend()

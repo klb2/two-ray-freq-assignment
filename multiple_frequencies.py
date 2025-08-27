@@ -27,6 +27,12 @@ def sum_power(distance, freq, h_tx, h_rx, c=constants.c, power_tx=1.0):
     return power_rx
 
 
+def sc_power(distance, freq, h_tx, h_rx, c=constants.c, power_tx=1.0):
+    _power_sc = rec_power(distance, np.expand_dims(freq, -1), h_tx, h_rx)
+    power_sc = np.max(_power_sc, axis=0)
+    return power_sc
+
+
 def sum_power_lower_envelope(
     distance,
     freq,
